@@ -15,7 +15,6 @@ public class PacketHandler {
 
     public static void registerMessages(String channelName) {
         INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(channelName);
-
         // Server side
         INSTANCE.registerMessage(PacketGetInfo.Handler.class, PacketGetInfo.class, nextID(), Side.SERVER);
         INSTANCE.registerMessage(PacketGetEntityInfo.Handler.class, PacketGetEntityInfo.class, nextID(), Side.SERVER);
