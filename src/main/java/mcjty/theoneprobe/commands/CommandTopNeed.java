@@ -1,10 +1,5 @@
 package mcjty.theoneprobe.commands;
 
-import mcjty.theoneprobe.ClientForgeEventHandlers;
-import mcjty.theoneprobe.TheOneProbe;
-import mcjty.theoneprobe.setup.GuiProxy;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
@@ -33,9 +28,7 @@ public class CommandTopNeed implements ICommand {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) {
-        ClientForgeEventHandlers.ignoreNextGuiClose = true;
-        EntityPlayerSP player = Minecraft.getMinecraft().player;
-        player.openGui(TheOneProbe.instance, GuiProxy.GUI_NOTE, player.getEntityWorld(), (int) player.posX, (int) player.posY, (int) player.posZ);
+
     }
 
     @Override

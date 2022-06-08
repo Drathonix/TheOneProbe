@@ -3,7 +3,6 @@ package mcjty.theoneprobe.apiimpl.elements;
 import io.netty.buffer.ByteBuf;
 import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.apiimpl.client.ElementTextRender;
 import mcjty.theoneprobe.network.NetworkTools;
 
 public class ElementText implements IElement {
@@ -19,13 +18,8 @@ public class ElementText implements IElement {
     }
 
     @Override
-    public void render(int x, int y) {
-        ElementTextRender.render(text, x, y);
-    }
-
-    @Override
     public int getWidth() {
-        return ElementTextRender.getWidth(text);
+        return 0;
     }
 
     @Override

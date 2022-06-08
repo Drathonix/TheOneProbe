@@ -4,7 +4,6 @@ import io.netty.buffer.ByteBuf;
 import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.api.IEntityStyle;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.apiimpl.client.ElementEntityRender;
 import mcjty.theoneprobe.apiimpl.styles.EntityStyle;
 import mcjty.theoneprobe.network.NetworkTools;
 import net.minecraft.entity.Entity;
@@ -54,15 +53,6 @@ public class ElementEntity implements IElement {
             playerID = buf.readInt();
         } else {
             playerID = null;
-        }
-    }
-
-    @Override
-    public void render(int x, int y) {
-        if (playerID != null) {
-            ElementEntityRender.renderPlayer(entityName, playerID, style, x, y);
-        } else {
-            ElementEntityRender.render(entityName, entityNBT, style, x, y);
         }
     }
 

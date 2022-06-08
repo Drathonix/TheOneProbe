@@ -2,11 +2,8 @@ package mcjty.theoneprobe;
 
 import mcjty.theoneprobe.api.ITheOneProbe;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.items.ModItems;
 import mcjty.theoneprobe.setup.IProxy;
 import mcjty.theoneprobe.setup.ModSetup;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,6 +18,7 @@ import java.util.function.Function;
         dependencies =
                 "after:forge@[" + TheOneProbe.MIN_FORGE11_VER + ",);" +
                 "after:tesla",
+        acceptableRemoteVersions = "*",
         version = TheOneProbe.VERSION,
         acceptedMinecraftVersions = "[1.12,1.13)",
         guiFactory = "mcjty.theoneprobe.config.TopModGuiFactory")
@@ -37,13 +35,6 @@ public class TheOneProbe {
     public static TheOneProbe instance;
 
     public static TheOneProbeImp theOneProbeImp = new TheOneProbeImp();
-
-    public static CreativeTabs tabProbe = new CreativeTabs("Probe") {
-        @Override
-        public ItemStack getTabIconItem() {
-            return new ItemStack(ModItems.probe);
-        }
-    };
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {

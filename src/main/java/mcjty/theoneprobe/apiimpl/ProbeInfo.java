@@ -11,15 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProbeInfo extends ElementVertical {
-
-    public List<IElement> getElements() {
-        return children;
-    }
-
-    public void fromBytes(ByteBuf buf) {
-        children = createElements(buf);
-    }
-
     public ProbeInfo() {
         super((Integer) null, 2, ElementAlignment.ALIGN_TOPLEFT);
     }
@@ -42,9 +33,5 @@ public class ProbeInfo extends ElementVertical {
             buf.writeInt(element.getID());
             element.toBytes(buf);
         }
-    }
-
-    public void removeElement(IElement element) {
-        this.getElements().remove(element);
     }
 }

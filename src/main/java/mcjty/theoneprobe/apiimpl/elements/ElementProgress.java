@@ -5,7 +5,6 @@ import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.api.IProgressStyle;
 import mcjty.theoneprobe.api.NumberFormat;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.apiimpl.client.ElementProgressRender;
 import mcjty.theoneprobe.apiimpl.styles.ProgressStyle;
 import mcjty.theoneprobe.network.NetworkTools;
 
@@ -78,10 +77,6 @@ public class ElementProgress implements IElement {
         return Long.toString(in);
     }
 
-    @Override
-    public void render(int x, int y) {
-        ElementProgressRender.render(style, current, max, x, y, getWidth(), getHeight());
-    }
 
     @Override
     public int getWidth() {

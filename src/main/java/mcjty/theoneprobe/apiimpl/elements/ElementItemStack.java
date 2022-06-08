@@ -4,7 +4,6 @@ import io.netty.buffer.ByteBuf;
 import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.api.IItemStyle;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.apiimpl.client.ElementItemStackRender;
 import mcjty.theoneprobe.apiimpl.styles.ItemStyle;
 import mcjty.theoneprobe.network.NetworkTools;
 import net.minecraft.item.ItemStack;
@@ -28,11 +27,6 @@ public class ElementItemStack implements IElement {
         style = new ItemStyle()
                 .width(buf.readInt())
                 .height(buf.readInt());
-    }
-
-    @Override
-    public void render(int x, int y) {
-        ElementItemStackRender.render(itemStack, style, x, y);
     }
 
     @Override

@@ -7,10 +7,6 @@ import io.netty.buffer.ByteBuf;
  */
 public interface IElement {
 
-    /**
-     * Render this element at the location given by the location
-     */
-    void render(int x, int y);
 
     /**
      * Get the width of this element

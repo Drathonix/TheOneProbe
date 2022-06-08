@@ -3,7 +3,6 @@ package mcjty.theoneprobe.apiimpl.elements;
 import io.netty.buffer.ByteBuf;
 import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.apiimpl.client.ElementTextRender;
 import mcjty.theoneprobe.network.NetworkTools;
 import net.minecraft.item.ItemStack;
 
@@ -24,18 +23,9 @@ public class ElementItemLabel implements IElement {
     }
 
     @Override
-    public void render(int x, int y) {
-        if (!itemStack.isEmpty()) {
-            String text = itemStack.getDisplayName();
-            ElementTextRender.render(text, x, y);
-        }
-    }
-
-    @Override
     public int getWidth() {
         if (!itemStack.isEmpty()) {
-            String text = itemStack.getDisplayName();
-            return ElementTextRender.getWidth(text);
+            return 0;
         } else {
             return 10;
         }

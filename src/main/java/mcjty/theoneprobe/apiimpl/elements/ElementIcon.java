@@ -4,7 +4,6 @@ import io.netty.buffer.ByteBuf;
 import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.api.IIconStyle;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
-import mcjty.theoneprobe.apiimpl.client.ElementIconRender;
 import mcjty.theoneprobe.apiimpl.styles.IconStyle;
 import mcjty.theoneprobe.network.NetworkTools;
 import net.minecraft.util.ResourceLocation;
@@ -41,11 +40,6 @@ public class ElementIcon implements IElement {
     }
 
     @Override
-    public void render(int x, int y) {
-        ElementIconRender.render(icon, x, y, w, h, u, v, style.getTextureWidth(), style.getTextureHeight());
-    }
-
-    @Override
     public int getWidth() {
         return style.getWidth();
     }
@@ -57,8 +51,8 @@ public class ElementIcon implements IElement {
 
     @Override
     public void toBytes(ByteBuf buf) {
-        NetworkTools.writeString(buf, icon.getResourceDomain());
-        NetworkTools.writeString(buf, icon.getResourcePath());
+        NetworkTools.writeString(buf, icon.getNamespace());
+        NetworkTools.writeString(buf, icon.getPath());
         buf.writeInt(u);
         buf.writeInt(v);
         buf.writeInt(w);

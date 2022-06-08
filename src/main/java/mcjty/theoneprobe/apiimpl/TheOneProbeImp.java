@@ -84,6 +84,11 @@ public class TheOneProbeImp implements ITheOneProbe {
         return factories.get(id);
     }
 
+    @Override
+    public IOverlayRenderer getOverlayRenderer() {
+        return null;
+    }
+
     public ProbeInfo create() {
         return new ProbeInfo();
     }
@@ -166,10 +171,6 @@ public class TheOneProbeImp implements ITheOneProbe {
         return id;
     }
 
-    @Override
-    public IOverlayRenderer getOverlayRenderer() {
-        return new DefaultOverlayRenderer();
-    }
 
     @Override
     public IProbeConfig createProbeConfig() {
